@@ -19,6 +19,7 @@ sudo chown -R $NAME:$NAME /home/$NAME/.ssh/
 3. Add user to group `www-data`
 ```bash
 sudo usermod -a -G www-data $NAME
+sudo usermod -a -G ssh $NAME
 sudo usermod -g www-data $NAME
 ```
 4. Create directory for html, css, js output in `/home/www-data/`

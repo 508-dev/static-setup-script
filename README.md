@@ -9,9 +9,11 @@ Script to run when creating new static deploy environment for new static project
 sudo adduser --disabled-password --gecos "" $NAME
 ```
 3. Create SSH keys
+// need to update this because you need to generate the key somewhere and then get it in the authorized_keys file somehow
 ```bash
 sudo mkdir /home/$NAME/.ssh
 sudo ssh-keygen -t ed25519 -C "$NAME@508.dev" -f /home/$NAME/.ssh/id_ed -N ""
+sudo cp /home/$NAME/.ssh/id_ed authorized_keys
 sudo chown -R $NAME:$NAME /home/$NAME/.ssh/
 ```
 3. Add user to group `www-data`

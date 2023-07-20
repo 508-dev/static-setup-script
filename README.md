@@ -16,6 +16,12 @@ sudo ssh-keygen -t ed25519 -C "$NAME@508.dev" -f /home/$NAME/.ssh/id_ed -N ""
 sudo cp /home/$NAME/.ssh/id_ed authorized_keys
 sudo chown -R $NAME:$NAME /home/$NAME/.ssh/
 ```
+
+3. Create src and etc directories if necessary
+```bash
+sudo mkdir /home/$NAME/src/
+sudo chown $NAME:$NAME /home/$NAME/src/
+```
 3. Add user to group `www-data`
 ```bash
 sudo usermod -a -G www-data $NAME
